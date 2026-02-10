@@ -19,22 +19,10 @@ fun AudioScreen(sectionTitle: String) {
     val section = SectionsData.getSection(sectionTitle)
     section ?: return
 
-    val context = LocalContext.current
-
-
-
     LazyColumn(modifier = Modifier.padding(top = 40.dp)) {
         items(section.audioRes) { audio ->
             VideoPlayer(audio)
-            /*Button(
-                modifier = Modifier
-                    .padding(16.dp),
-                onClick = {
-                    MediaPlayer.create(context, audio).start()
-                }
-            ) {
-                Text("Reproducir audio")
-            }*/
+
         }
     }
 }

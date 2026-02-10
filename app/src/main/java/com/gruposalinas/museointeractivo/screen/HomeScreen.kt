@@ -39,7 +39,6 @@ import kotlin.jvm.java
 fun HomeScreen(navController: NavController) {
     val context = LocalContext.current
 
-
     LazyColumn(modifier = Modifier.padding(top = 50.dp)) {
        items(SectionsData.sections) { section ->
            Card(
@@ -48,8 +47,7 @@ fun HomeScreen(navController: NavController) {
                    .fillMaxWidth()
                    .clickable{
                        navController.navigate(
-                        //   "detail/${section.title}/${section.description}/${section.imageRes}/${section.audioRes}/${section.videoRes}"
-                          // navController.navigate("section_menu/$section")
+
                            "section_menu/${Uri.encode(section.title)}"
                        )
                    },
